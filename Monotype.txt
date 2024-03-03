@@ -1,0 +1,54 @@
+Imagine you are building a car manufacturing system. The system consists of three classes: CarAssembler, EngineInstaller, and SparkPlugProvider. Each class has a method called "Install()".
+
+The CarAssembler class is responsible for assembling the car and needs to install the engine. It relies on the EngineInstaller class to perform the installation.
+
+The EngineInstaller class, in turn, needs access to spark plugs from the SparkPlugProvider class to properly install the engine.
+
+The challenge is to ensure that the CarAssembler class can call the "Install()" method of the EngineInstaller class, and the EngineInstaller class can call the "Install()" method of the SparkPlugProvider class.
+
+However, you need to solve this problem without directly creating instances of the EngineInstaller and SparkPlugProvider classes within the CarAssembler class or the EngineInstaller class, respectively. Instead, you must find a way to provide instances of EngineInstaller to CarAssembler and instances of SparkPlugProvider to EngineInstaller without using the "new" keyword explicitly.
+
+
+public Interface IInstaller{
+	public Install();
+}
+
+public CarAssembler: IInstaller{}
+public EngineInstaller: IInstaller{}
+public SparkPlugProvider: IInstaller{}
+
+
+public CarAssembler: IInstaller{
+IInstaller installer;
+public CarAssembler(){
+	installer = DI.resolve<IInstaller>("EngineInstaller")
+}
+public Install(){
+// some code here
+	installer.Install();
+	// some code later
+}
+
+}
+
+public EngineInstaller: IInstaller{
+IInstaller installer;
+
+public CarAssembler(){
+	installer = DI.resolve<IInstaller>("SparkPlugProvider")
+}
+
+public Install(){
+// some code here
+	installer.Install();
+	// some code later
+}
+
+}
+
+Main Program()
+DI.Register<IInstaller, EngineInstaller>("EngineInstaller")
+DI.Register<IInstaller, SparkPlugProvider>("SparkPlugProvider")
+var carAssembler = new CarAssembler();
+
+

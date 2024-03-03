@@ -1,0 +1,26 @@
+class A: IA {
+
+public result CertOperation(string certThumbrint){
+
+	return result;
+}
+
+}
+
+class B: IB {
+
+public result CertOperation(Biginteger certThumbrint){
+
+	return result;
+}
+
+}
+
+class Ad: IA {
+IB b = new B();
+public result CertOperation(string certThumbrint){
+// transforming my string to BigInteger
+	return b.Certoperation(transformed bigInteger);
+}
+
+}

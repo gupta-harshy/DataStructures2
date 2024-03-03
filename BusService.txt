@@ -1,0 +1,37 @@
+Bus Ticket booking system 
+1. Search the routes (point A, point B, date) --- high traffic
+2. Available seats on those routes (bus number, date)
+3. Book the tickets (bus Id, seat No, Date )
+
+API
+orangebus.com/getroute?source=""&destination=""&date=""
+api/GetRoute(source, destination, date) -> return List<busNumbers>
+
+orangebus.com/getroute?source=""&destination=""&date=""
+api/GetSeats(busNumber, date) -> List<SeatNo>
+
+orangebus.com/book Ticket
+{
+	"busNumber" : ""
+	"SeatNumber" : ""
+}
+api/PostTicket(busNumber, seatNo, Date) -> ok response 
+
+
+Architecture:
+1. location information. --> geohash --> redis --> location --> 2 servers --> circuit breaker pattern 
+Indian operstions -> we would divide India, which would area blocks -> 2000km2
+2k/0.5k - 4M blocks -> 10bytes * => 40MB + 40MB => 80MB
+
+
+2. Bus informations which bus on which route --> SQL  busNumber, location;
+redis -> for faster acces; each day update happens with some backend job
+
+SQL -->  busNumber, seatNumber, IsBooked, date 
+
+
+3. Seat numbers and bookings --> SQL transcactions. 
+
+
+
+
