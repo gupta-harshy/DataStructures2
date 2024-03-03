@@ -28,15 +28,15 @@ namespace DataStructures.DP
 
         }
 
-        private int maxSubstring(string S, int left, int right, int diff, int[][] dp)
+        private int maxSubstring(string S, int left, int right, int diff, int[,] dp)
         {
             if (right == left)
                 return (S[right] == '0') ? 1 : -1;
-            if(dp[left][right] != -100001) return dp[left][right];
+            if(dp[left,right] != -100001) return dp[left,right];
             int leftR = maxSubstring(S, left + 1, right, (S[left] == '0') ? diff - 1 : diff + 1, dp);
             int rightR = maxSubstring(S, left, right - 1, (S[right] == '0') ? diff - 1 : diff + 1, dp);
-            dp[left][right] = Math.Max(diff, Math.Max(leftR, rightR));
-            return dp[left][right];
+            dp[left, right] = Math.Max(diff, Math.Max(leftR, rightR));
+            return dp[left, right];
         }
 
         public void CreateInput()
