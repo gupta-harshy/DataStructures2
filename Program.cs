@@ -1,5 +1,6 @@
 ﻿using DataStructures.Arrays;
 using DataStructures.BackTracking;
+using DataStructures.Builder_Pattern;
 using DataStructures.DP;
 using DataStructures.DP.ChoiceDiagram;
 using DataStructures.DP.HypothesisInductionBasecase;
@@ -17,7 +18,11 @@ namespace DataStructures
         static void Main(string[] args)
         {
             Input input = new SubsetSum();
-            input.CreateInput();
+            //input.CreateInput();
+
+            var cb = new CodeBuilder("Person").AddField("Name", "string").AddField("Age", "int");
+            Console.WriteLine(cb);
+
             Console.ReadKey();
         }
     }
