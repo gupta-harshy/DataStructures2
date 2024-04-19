@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Coding Question", "Coding Q
 		Monotype.txt = Monotype.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Designpattern", "..\Designpattern\Designpattern.csproj", "{62F538B1-0EED-4F11-8A90-AE895E1ACB01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{4CA69397-37D7-4F72-A2CC-AA9DB66485E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CA69397-37D7-4F72-A2CC-AA9DB66485E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CA69397-37D7-4F72-A2CC-AA9DB66485E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F538B1-0EED-4F11-8A90-AE895E1ACB01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F538B1-0EED-4F11-8A90-AE895E1ACB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F538B1-0EED-4F11-8A90-AE895E1ACB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F538B1-0EED-4F11-8A90-AE895E1ACB01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
